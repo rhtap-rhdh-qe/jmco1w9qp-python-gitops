@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: jmco1w9qp-python-gitops
+  description: This is GitOps manifest for jmco1w9qp-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=jmco1w9qp-python
+    backstage.io/kubernetes-id: jmco1w9qp-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: jmco1w9qp-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:jmco1w9qp-python
